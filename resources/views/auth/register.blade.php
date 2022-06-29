@@ -12,12 +12,12 @@
                 <div class="row">
                 <div class="col-md-6">
                         <div class="form-group">
-                            <label for="first_name">Rut</label><span
+                            <label for="rut">Rut</label><span
                                     class="text-danger">*</span>
                             <input id="rut" type="text"
-                                   class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}"
+                                   class="form-control{{ $errors->has('rut') ? ' is-invalid' : '' }}"
                                    name="rut"
-                                   tabindex="1" placeholder="Enter Full Name" value="{{ old('name') }}"
+                                   tabindex="1" placeholder="Ingresa el Rut" value="{{ old('rut') }}"
                                    autofocus required>
                             <div class="invalid-feedback">
                                 {{ $errors->first('name') }}
