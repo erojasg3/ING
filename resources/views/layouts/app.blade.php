@@ -65,7 +65,7 @@
 @yield('page_js')
 @yield('scripts')
 <script>
-    let loggedInUser =@json(\Illuminate\Support\Facades\Auth::user());
+    let loggedInUser = @json(\Illuminate\Support\Facades\Auth::user());
     let loginUrl = '{{ route('login') }}';
     // Loading button plugin (removed from BS4)
     (function ($) {

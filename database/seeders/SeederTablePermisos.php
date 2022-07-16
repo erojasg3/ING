@@ -24,7 +24,12 @@ class SeederTablePermisos extends Seeder
             'ver-producto',
             'crear-producto',
             'editar-producto',
-            'borrar-producto'
+            'borrar-producto',
+
+            'ver-usuario',
+            'crear-usuario',
+            'editar-usuario',
+            'borrar-usuario',
         ];
         foreach($permisos as $permiso){
             Permission::create(['name'=>$permiso]);
