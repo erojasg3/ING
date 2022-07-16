@@ -14,7 +14,14 @@ use Illuminate\Support\Arr;
 
 class UsuarioController extends Controller
 {
-    
+    function __construct()
+    {
+        $this->middleware('permission:ver-usuario|crear-usuario|editar-usuario|eliminar-usuario', ['only'=>['index']]);
+        $this->middleware('permission:crear-usuario',['only'=>['create','store']]);
+        $this->middleware('permission:editar-usuario',['only'=>['edit','update']]);
+        $this->middleware('permission:eliminar-usuario',['only'=>['destroy']]);
+        
+    } 
     /**
      * Display a listing of the resource.
      *
@@ -49,9 +56,6 @@ class UsuarioController extends Controller
             'name' => 'required',
             'email' => 'required|email|unique:users,email',
             'password' => 'required|same:confirm-password',
-            'rut'=>'required|unique:users,rut',
-            'telefono'=>'required',
-            'direccion'=>'required',
             'roles' => 'required'
         ]);
     
@@ -103,10 +107,6 @@ class UsuarioController extends Controller
             'name'=> 'required',
             'email'=>'required|email|unique:users,email,'.$id,
             'password'=>'same:confirma-password',
-            'roles'=>'required',
-            'rut'=>'required',
-            'telefono'=>'required',
-            'direccion'=>'required'
         ]);
         $input = $request->all();
         if(!empty($input['password'])){

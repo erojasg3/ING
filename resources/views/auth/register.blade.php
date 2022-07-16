@@ -10,20 +10,6 @@
             <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
                 @csrf
                 <div class="row">
-                <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="rut">Rut</label><span
-                                    class="text-danger">*</span>
-                            <input id="rut" type="text"
-                                   class="form-control{{ $errors->has('rut') ? ' is-invalid' : '' }}"
-                                   name="rut"
-                                   tabindex="1" placeholder="Ingresa el Rut" value="{{ old('rut') }}"
-                                   autofocus required>
-                            <div class="invalid-feedback">
-                                {{ $errors->first('name') }}
-                            </div>
-                        </div>
-                    </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="first_name">Full Name:</label><span
@@ -49,34 +35,6 @@
                                    required autofocus>
                             <div class="invalid-feedback">
                                 {{ $errors->first('email') }}
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="first_name">Telefono:</label><span
-                                    class="text-danger">*</span>
-                            <input id="telefono" type="number"
-                                   class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}"
-                                   name="telefono"
-                                   tabindex="1" placeholder="Enter Full Name" value="{{ old('name') }}"
-                                   autofocus required>
-                            <div class="invalid-feedback">
-                                {{ $errors->first('name') }}
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="first_name">Direccion:</label><span
-                                    class="text-danger">*</span>
-                            <input id="direccion" type="text"
-                                   class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}"
-                                   name="direccion"
-                                   tabindex="1" placeholder="Enter Full Name" value="{{ old('name') }}"
-                                   autofocus required>
-                            <div class="invalid-feedback">
-                                {{ $errors->first('name') }}
                             </div>
                         </div>
                     </div>

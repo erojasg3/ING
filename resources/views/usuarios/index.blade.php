@@ -15,11 +15,8 @@
                             <table class="table table-striped mt-2">
                                 <thead style="background-color:#6777ef;">
                                     <th style="display: none;">ID</th>
-                                    <th style="color: #fff;">Rut</th>
                                     <th style="color: #fff;">Nombre</th>
                                     <th style="color: #fff;">E-mail</th>
-                                    <th style="color: #fff;">Direccion</th>
-                                    <th style="color: #fff;">telefono</th>
                                     <th style="color: #fff;">Rol</th>
                                     <th style="color: #fff;">Acciones</th>
                                 </thead>
@@ -27,11 +24,8 @@
                                     @foreach($usuarios as $usuario)
                                         <tr>
                                             <td style="display: none;"><{{$usuario->id}}/td>
-                                            <td>{{$usuario->rut}}</td>
                                             <td>{{$usuario->name}}</td>
                                             <td>{{$usuario->email}}</td>
-                                            <td>{{$usuario->direccion}}</td>
-                                            <td>{{$usuario->telefono}}</td>
                                             <td>
                                                 @if(!empty($usuario->getRoleNames()))
                                                    @foreach($usuario->getRoleNames() as $rolName)
